@@ -547,7 +547,6 @@ nav ul li:last-of-type a:hover {
 
 .home header {
     background-image: url(../img/pixel-notes-header.png);
-    background-position: 0% -3%;
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-attachment: fixed;

@@ -6,7 +6,9 @@ $(document).ready(() => {
         $('body').toggleClass('menu-open')
     })
 
-    $('.filter-option a').on('click', function () {
+    $('.filter-option a').on('click', function (e) {
+
+        e.preventDefault()
 
         var sel = $(this).data('selection')
 
