@@ -1,1 +1,35 @@
-$(document).ready(()=>{let e=["1","1-5","2"];$(".menu-icon").on("click",()=>{$("body").toggleClass("menu-open")}),$(".filter-option a").on("click",function(a){a.preventDefault();var n=$(this).data("selection");if($(".filter-option a").removeClass("active"),$(this).addClass("active"),0==n){o();return}e.forEach(e=>{$(`.gen-${e}-member`).hide()}),$(`.gen-${n}-member`).show()});var o=()=>{e.forEach(e=>{$(`.gen-${e}-member`).show()})}});
+$(document).ready(() => {
+
+    const generations = ["0", "1", "2"]
+
+    $('.menu-icon').on('click', () => {
+        $('body').toggleClass('menu-open')
+    })
+
+    $('.filter-option a').on('click', function (e) {
+
+        e.preventDefault()
+
+        var sel = $(this).data('selection')
+
+        $('.filter-option a').removeClass('active')
+        $(this).addClass('active')
+
+        if (sel == -1) {
+            showAllMembers()
+            return
+        }
+
+        generations.forEach(value => {
+            $(`.gen-${value}-member`).hide()
+        })
+
+        $(`.gen-${sel}-member`).show()
+    })
+
+    var showAllMembers = () => {
+        generations.forEach(value => {
+            $(`.gen-${value}-member`).show()
+        })
+    }
+})  
